@@ -8,6 +8,7 @@ services:
     environment:
       - DOCKER_TLS_CERTDIR=/certs
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - docker-certs-ca:/certs/ca
       - docker-certs-client:/certs/client
       - jenkins-data:/var/jenkins_home
