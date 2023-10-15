@@ -6,6 +6,7 @@ services:
     networks:
       - jenkins
     hostname: dind
+    container_name: dind
     environment:
       - DOCKER_TLS_CERTDIR=/certs
     volumes:
@@ -18,8 +19,9 @@ services:
     image: jenkins/jenkins:lts-jdk11
     networks:
       - jenkins
+    container_name: jenkins
     environment:
-      - DOCKER_HOST=tcp://dind:2375  
+      - DOCKER_HOST=tcp://dind:2376 
       - DOCKER_CERT_PATH=/certs/client  
       - DOCKER_TLS_VERIFY=1  
     volumes:
