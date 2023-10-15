@@ -5,6 +5,7 @@ services:
     privileged: true
     networks:
       - jenkins
+    hostname: dind
     environment:
       - DOCKER_TLS_CERTDIR=/certs
     volumes:
